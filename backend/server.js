@@ -18,8 +18,12 @@ app.use(express.json());
 
 // Enable CORS
 app.use(cors({
-  origin: 'http://localhost:9002', // Adjust this to your frontend URL or use '*' for development
-  credentials: true,
+  origin: [
+    'http://localhost:9002', // Seu frontend Next.js local
+    'https://6000-firebase-studio-1753837305674.cluster-4xpux6pqdzhrktbhjf2cumyqtg.cloudworkstations.dev', // Sua Cloud Workstation
+   // 'https://shop-yxznet-back.onrender.com' // Exemplo: Se você deployar seu frontend Next.js no Render
+  ],
+  credentials: true,
 }));
 
 // Mount routers
